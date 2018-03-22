@@ -1,6 +1,6 @@
 module Spree
   Api::OrdersController.class_eval do
-    skip_before_action :authenticate_user, only: [:apply_coupon_code, :portions]
+    skip_before_action :check_authorization, only: [:apply_coupon_code, :portions]
 
     # Calculates the quantity of portions the order can have
     # based on amount and credit card type
